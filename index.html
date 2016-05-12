@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test social shares</title>
+	<title>Заголовок html страницы</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://raw.githubusercontent.com/AyumuKasuga/SocialShare/master/SocialShare.min.js"></script>
 	<script type="text/javascript">
 		// Check if a new cache is available on page load.
 		window.addEventListener('load', function(e) {
@@ -22,11 +23,46 @@
 
 		}, false);
 	</script>
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	        $('.share').ShareLink({
+	            title: 'Заголовок поданный вручную',
+	            text: 'Текст поданный вручную',
+	            image: 'https://todotogo.herokuapp.com/static/img/assets/article/preview.jpg',
+	            url: 'http://2do.fitdev.ru/articles/142/mesta-dlya-bukkrossinga-v-moskve'
+	        });
+	        $('.counter').ShareCounter({
+	            url: 'http://google.com/'
+	        });
+	    });
+	</script>
+
+	<style>
+	    #container-fluid {padding: 10px;}
+	    button.share {margin-bottom: 5px;}
+	    .source-link {float: right;}
+	    .main-link {color: black;}
+	</style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>Just test</h1>
-</body>
+    <div id='container-fluid'>
+        <div class="container-fluid">
+            <div class="row">
+                <button class='btn btn-primary share s_vk' type='button'>
+                    Vkontakte <span class='badge counter c_vk'></span>
+                </button>
+                <button class='btn btn-primary share s_facebook' type='button'>
+                    Facebook <div class='badge counter c_facebook'></div>
+                </button>
+
+                <button class='btn btn-primary share s_odnoklassniki' type='button'>
+                    OK <div class='badge counter c_odnoklassniki'></div>
+                </button>
+
+            </div>
+        </div>
+    </body>
 </html>
